@@ -6,17 +6,22 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Data
+import java.time.LocalDateTime;
+
 @Entity
+@Table(name = "t_transaction")
+@Data
 @Getter
 @Setter
 @NoArgsConstructor
-@Table(name = "t_employee")
-public class Employee {
+public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
+    private Long userId;
+    private String paymentMethod;
+    private Double amount;
+    private String status;
     private String role;
-
+    private LocalDateTime timestamp;
 }
