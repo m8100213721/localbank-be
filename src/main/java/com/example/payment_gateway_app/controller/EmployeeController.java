@@ -2,6 +2,8 @@ package com.example.payment_gateway_app.controller;
 
 import com.example.payment_gateway_app.entity.Employee;
 import com.example.payment_gateway_app.service.EmployeeService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,6 +14,8 @@ import java.util.List;
 public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
+
+    private static final Logger logger = LoggerFactory.getLogger(EmployeeController.class);
 
     @GetMapping
     public List<Employee> getAllEmployees() {
