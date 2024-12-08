@@ -17,5 +17,8 @@
     <changeSet id="4" author="MJ">
         <sqlFile path="db/changelog/4-auditInfo.sql"/>
     </changeSet>
+    <changeSet id="5" author="MJ">
+        <sqlFile path="db/changelog/5-relationship.sql"/>
+    </changeSet>
 
 </databaseChangeLog>

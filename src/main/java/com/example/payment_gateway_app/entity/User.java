@@ -3,6 +3,8 @@ package com.example.payment_gateway_app.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @Data
 @Getter
