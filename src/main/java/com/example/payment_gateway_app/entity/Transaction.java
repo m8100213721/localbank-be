@@ -10,11 +10,9 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "t_transaction")
-@Data
 @Getter
 @Setter
-@NoArgsConstructor
-public class Transaction {
+public class Transaction extends Auditable<String>{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -23,5 +21,4 @@ public class Transaction {
     private Double amount;
     private String status;
     private String role;
-    private LocalDateTime timestamp;
 }

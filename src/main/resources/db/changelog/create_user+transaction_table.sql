@@ -11,6 +11,5 @@ CREATE TABLE T_TRANSACTION (
     paymentMethod VARCHAR(255),
     amount DOUBLE PRECISION,
     status VARCHAR(255),
-    role VARCHAR(255),
-    CONSTRAINT fk_t_user FOREIGN KEY (userId) REFERENCES t_user(id)
+    role VARCHAR(255)
 );
