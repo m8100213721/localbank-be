@@ -6,10 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
-public class AccountServiceImpl implements AccountService{
+public class AccountServiceImpl implements AccountService {
     @Autowired
     private AccountRepository accountRepository;
+
     @Override
     public List<Account> getAllAccounts() {
         return accountRepository.findAll();
@@ -17,6 +19,17 @@ public class AccountServiceImpl implements AccountService{
 
     @Override
     public Account saveAccount(Account account) {
+        return accountRepository.save(account);
+    }
+
+    // Update Account
+    //@Transactional
+    @Override
+    public Account updateAccount(Long id, Account accountDetails) {
+        Account account = getAccountById(id);
+        account.setAccountNumber(accountDetails.getAccountNumber());
+        account.setBalance(accountDetails.getBalance());
+        account.setAccountType(accountDetails.getAccountType());
         return accountRepository.save(account);
     }
 

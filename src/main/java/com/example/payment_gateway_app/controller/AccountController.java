@@ -20,8 +20,26 @@ public class AccountController {
         return ResponseEntity.ok(accountService.saveAccount(account));
     }
 
+    // Get All Accounts
     @GetMapping
-    public ResponseEntity<List<Account>> getAccountDetails(@RequestParam Long accountId) {
-        return ResponseEntity.ok(Collections.singletonList(accountService.getAccountById(accountId)));
+    public ResponseEntity<List<Account>> getAllAccounts() {
+        List<Account> accounts = accountService.getAllAccounts();
+        return ResponseEntity.ok(accounts); }
+    // Get Account by ID
+    @GetMapping("/{id}")
+    public ResponseEntity<Account> getAccountById(@PathVariable Long id) {
+        Account account = accountService.getAccountById(id); return ResponseEntity.ok(account);
+    }
+    // Update Account
+    @PutMapping("/{id}")
+    public ResponseEntity<Account> updateAccount(@PathVariable Long id, @RequestBody Account accountDetails) {
+        Account updatedAccount = accountService.updateAccount(id, accountDetails);
+        return ResponseEntity.ok(updatedAccount);
+    }
+    // Delete Account
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteAccount(@PathVariable Long id) {
+        accountService.deleteAccountById(id);
+        return ResponseEntity.noContent().build();
     }
 }

@@ -28,8 +28,8 @@ public class UserController {
         return ResponseEntity.ok("User logged in");
     }
 
-    @DeleteMapping("/delete-user")
-    public ResponseEntity<?> deleteUser(Long id) {
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteUser(@PathVariable Long id) {
         userService.deleteUserById(id);
         // Implement authentication logic
         return ResponseEntity.ok("deleted");

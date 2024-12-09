@@ -24,7 +24,7 @@ public class TransactionController {
         return ResponseEntity.ok(transactionService.saveTransaction(transaction));
     }
 
-    @GetMapping("/history")
+    @GetMapping("/history/{id}")
     public ResponseEntity<List<Transaction>> getTransactionHistory(@RequestParam Long userId) {
         return ResponseEntity.ok(transactionService.getTransactionsByUserId(userId));
     }
