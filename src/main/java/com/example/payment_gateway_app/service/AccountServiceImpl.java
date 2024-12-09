@@ -25,11 +25,11 @@ public class AccountServiceImpl implements AccountService {
     // Update Account
     //@Transactional
     @Override
-    public Account updateAccount(Long id, Account accountDetails) {
+    public Account updateAccount(Long id, Account input) {
         Account account = getAccountById(id);
-        account.setAccountNumber(accountDetails.getAccountNumber());
-        account.setBalance(accountDetails.getBalance());
-        account.setAccountType(accountDetails.getAccountType());
+        account.setAccountNumber(input.getAccountNumber());
+        account.setBalance(input.getBalance());
+        account.setAccountType(input.getAccountType());
         return accountRepository.save(account);
     }
 

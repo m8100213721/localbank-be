@@ -1,13 +1,11 @@
 package com.example.payment_gateway_app.controller;
 
 import com.example.payment_gateway_app.entity.Account;
-import com.example.payment_gateway_app.entity.Transaction;
 import com.example.payment_gateway_app.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collections;
 import java.util.List;
 
 @RestController
