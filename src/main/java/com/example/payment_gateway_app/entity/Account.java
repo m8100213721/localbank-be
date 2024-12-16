@@ -23,7 +23,7 @@ public class Account extends Auditable<String>{
     private BigDecimal balance;
     private String accountType;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 }
