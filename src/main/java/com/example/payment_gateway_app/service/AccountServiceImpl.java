@@ -3,6 +3,7 @@ package com.example.payment_gateway_app.service;
 import com.example.payment_gateway_app.entity.Account;
 import com.example.payment_gateway_app.repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -34,6 +35,7 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
+    @Cacheable(value = "accounts", key = "#id")
     public Account getAccountById(Long id) {
         return accountRepository.findById(id).orElse(null);
     }

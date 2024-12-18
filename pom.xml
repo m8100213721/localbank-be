@@ -93,6 +93,12 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- in memory data caching-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <version>3.3.5</version>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>

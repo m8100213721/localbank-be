@@ -3,6 +3,7 @@ package com.example.payment_gateway_app.service;
 import com.example.payment_gateway_app.entity.User;
 import com.example.payment_gateway_app.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

@@ -14,3 +14,22 @@ services:
     container_name: adminer
     ports:
       - "8081:8080" # Map container's 8080 to host's 8081
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - "6379:6379"
+
+  phpredisadmin:
+    image: erikdubbelboer/phpredisadmin
+    container_name: phpredisadmin
+    environment:
+      - REDIS_1_HOST=redis
+      - REDIS_1_PORT=6379
+      - ADMIN_USER=admin
+      - ADMIN_PASS=admin
+    ports:
+      - "80:80"
+    links:
+      - redis
